@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@Table(name = "board")
+@Table(name = "BOARD")
 public class BoardEntity {
 
     @Id

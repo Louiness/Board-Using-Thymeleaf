@@ -1,0 +1,23 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<div class="write_board">
+		<form th:action="@{/write/save}" th:object="${boardRequestDTO}" method="post">
+			<h2>title</h2>
+			<input type="text" th:field="*{boardTitle}">
+			<h2>content</h2>
+			<input type="text" th:field="*{boardContent}">
+			<h2>username</h2>
+			<input type="text" th:field="*{userName}">
+			<button type="submit">작성</button>
+		</form>
+	</div>
+</body>
+</html>
