@@ -1,4 +1,4 @@
-package kks.example.board;
+package com.kks.example;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
