@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="write_board">
-		<form th:action="@{/write/save}" th:object="${boardRequestDTO}" method="post">
+		<form th:action="@{/write/save}" th:object="${boardRequestDTO}" th:method="post">
 			<h2>title</h2>
 			<input type="text" th:field="*{boardTitle}">
 			<h2>content</h2>
