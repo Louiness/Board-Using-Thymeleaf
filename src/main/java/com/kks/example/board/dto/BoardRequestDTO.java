@@ -19,15 +19,6 @@ public class BoardRequestDTO {
     private LocalDate postingDate;
     private Long views;
 
-    @Builder
-    public BoardRequestDTO(String boardTitle, String boardContent, String userName, LocalDate postingDate, Long views) {
-        this.boardTitle = boardTitle;
-        this.boardContent = boardContent;
-        this.userName = userName;
-        this.postingDate = postingDate;
-        this.views = views;
-    }
-
     public BoardEntity toEntity() {
         return BoardEntity.builder()
                 .boardTitle(boardTitle)

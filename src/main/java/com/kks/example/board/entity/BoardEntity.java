@@ -21,7 +21,7 @@ public class BoardEntity {
     @Column(name = "board_content", columnDefinition = "TEXT", nullable = false)
     private String boardContent;
 
-    @Column(name = "user_name", length = 10, nullable = false)
+    @Column(name = "user_name", length = 15, nullable = false)
     private String userName;
 
     @Column(name = "posting_date")

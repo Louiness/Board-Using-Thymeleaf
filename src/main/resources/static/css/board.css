@@ -1,3 +1,6 @@
+:root {
+    --hoverColor: coral;
+}
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +21,9 @@ body {
 a {
     text-decoration: none;
 }
+li {
+    list-style: none;
+}
 header a {
     width: 100%;
     color: black;
@@ -26,7 +32,7 @@ header a {
     cursor: pointer;
 }
 header a:hover {
-    background: coral;
+    background: var(--hoverColor);
     color: #fff;
 }
 .board .board_list table {
@@ -49,6 +55,64 @@ header a:hover {
 }
 .board .board_list table tbody td a {
 
+}
+.board .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5em 0;
+    line-height: 2.5em;
+    user-select: none;
+}
+.board .pagination ul {
+    display: flex;
+}
+.board .pagination ul li {
+    width: 2.5em;
+    height: 2.5em;
+    margin: 0 5px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 600;
+}
+.board .pagination ul li span {
+    font-size: 16px;
+}
+.board .pagination ul a {
+    color: #000000;
+}
+.board .pagination ul li.numb,
+.board .pagination .btn {
+    cursor: pointer;
+}
+.board .pagination ul li.active,
+.board .pagination ul li.numb:hover,
+.board .pagination ul li.btn:hover {
+    background: var(--hoverColor);
+}
+.board .pagination ul li.active span,
+.board .pagination ul li.numb:hover span,
+.board .pagination ul li.btn:hover span {
+    color: #ffffff;
+}
+.board .pagination ul li.active {
+    cursor: default;
+}
+.board .pagination .btn {
+    width: 5em;
+    height: 2.5em;
+}
+.board .pagination .btn.prev {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.board .pagination .btn.next {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 .board .searchAndWrite {
     width: 100%;
@@ -81,6 +145,6 @@ header a:hover {
     cursor: pointer;
 }
 .board .searchAndWrite .writeBtn:hover {
-    border-color: rgb(60, 96, 119);
-    color: rgb(60, 96, 119);
+    border-color: var(--hoverColor);
+    color: var(--hoverColor);
 }

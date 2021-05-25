@@ -5,6 +5,10 @@ import com.kks.example.board.dto.BoardResponseDTO;
 import com.kks.example.board.entity.BoardEntity;
 import com.kks.example.board.entity.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -21,16 +25,10 @@ public class BoardServiceImpl implements BoardService{
     private BoardRepository boardRepository;
 
     @Override
-    public List<BoardResponseDTO> getBoardAllList() {
-        List<BoardResponseDTO> boardResponseDTOList = new ArrayList<>();
+    public Page<BoardEntity> getBoardAllList(Pageable pageable) {
+        Page<BoardEntity> boardEntityList = boardRepository.findAll(pageable);
 
-        for (BoardEntity boardEntity : boardRepository.findAll()) {
-
-            if(Optional.ofNullable(boardEntity) != null){
-                boardResponseDTOList.add(new BoardResponseDTO(boardEntity));
-            }
-        }
-        return boardResponseDTOList;
+        return boardEntityList;
     }
 
     @Transactional
