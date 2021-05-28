@@ -1,0 +1,58 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--  <link rel="stylesheet" href="../../static/css/sign/main.css">-->
+<!--  <link rel="stylesheet" href="../../static/css/sign/signup.css">-->
+  <script src="https://kit.fontawesome.com/fbd5dbe7de.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" th:href="@{/css/sign/main.css}">
+  <link rel="stylesheet" th:href="@{/css/sign/signup.css}">
+  <title>Document</title>
+</head>
+<body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.9&appId=signin";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+  <script src="../../static/js/sign/linkage.js"></script>
+  <div class="container">
+    <div class="header">
+      <span><i class="fas fa-lock-open-alt"></i></span>
+      <span>s i g n   i n</span>
+    </div>
+    <div class="content">
+      <form th:action="@{/signin/signup/save}" th:object="${userVO}" th:method="post">
+        <div class="id-container">
+          <p>id</p>
+          <div class="input-container">
+            <input id="id" type="text" th:field="*{id}">
+          </div>
+          <div class="error-text">
+            <span>Lorem ipsum dolor sit amet.</span>
+          </div>
+        </div>
+        <div class="pwd-container">
+          <p>password</p>
+          <div class="input-container">
+            <input id="pwd" type="password" th:field="*{password}">
+          </div>
+          <div class="error-text">
+            <span>Lorem ipsum dolor sit amet.</span>
+          </div>
+        <button type="submit">sign in</button>
+      </form>
+    </div>
+    <fb:login-button 
+      scope="public_profile,email"
+      onlogin="checkLoginState();">
+    </fb:login-button>
+     <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false"></div>
+</body>
+</html>

@@ -13,8 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.time.LocalDate;
 
 @Slf4j
 @Controller
@@ -37,7 +38,7 @@ public class BoardController {
         mav.addObject("startPage", startPage);
         mav.addObject("endPage", endPage);
 
-        mav.setViewName("board");
+        mav.setViewName("board/board");
 
         return mav;
     }
@@ -48,7 +49,7 @@ public class BoardController {
         ModelAndView mav = new ModelAndView();
 
         mav.addObject("boardRequestDTO", new BoardRequestDTO());
-        mav.setViewName("write");
+        mav.setViewName("board/write");
 
         return mav;
     }
@@ -57,6 +58,8 @@ public class BoardController {
     public ModelAndView board_write_save(BoardRequestDTO boardRequestDTO) {
 
         ModelAndView mav = new ModelAndView();
+
+        boardRequestDTO.setPostingDate(LocalDate.now());
 
         boardService.savePost(boardRequestDTO);
 

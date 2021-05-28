@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.time.LocalDate;
-
 @Controller
 @RequestMapping(value="/signin")
 public class UserController {
@@ -24,7 +22,7 @@ public class UserController {
         ModelAndView mav = new ModelAndView();
 
         mav.addObject("userVO", new UserRequestVO());
-        mav.setViewName("signin");
+        mav.setViewName("sign/signin");
 
         return mav;
     }
@@ -35,7 +33,7 @@ public class UserController {
         ModelAndView mav = new ModelAndView();
 
         mav.addObject("userVO", new UserRequestVO());
-        mav.setViewName("signup");
+        mav.setViewName("sign/signup");
 
         return mav;
     }
@@ -45,10 +43,24 @@ public class UserController {
 
         ModelAndView mav = new ModelAndView();
 
-        userService.save(userRequestVO);
-
-        mav.setViewName("redirect:/signin");
+        if(!userService.save(userRequestVO).isBlank()) {
+            mav.setViewName("redirect:/signin/signupSuccess");
+        } else {
+            mav.setViewName("redirect:/signin/signupFailed");
+        }
 
         return mav;
+    }
+
+    @GetMapping("/signupSuccess")
+    public String signUp_success() {
+
+        return "sign/signupSuccess";
+    }
+
+    @GetMapping("/signupFailed")
+    public String signUp_failed() {
+
+        return "sign/signupFailed";
     }
 }

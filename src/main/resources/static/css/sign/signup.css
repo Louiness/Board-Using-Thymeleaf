@@ -1,0 +1,160 @@
+.container {
+    box-shadow: 0 0 60px var(--blurColor);
+    border: 1px solid var(--blurColor);
+    background: var(--containerColor);
+    border-radius: 15px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-shadow {
+    border: 1px solid var(--backgroundColor);
+}
+.container .header {
+    padding: 36px 48px;
+    font-size: 36px;
+}
+.container .header span {
+    white-space: pre;
+    color: var(--fontColor);
+    user-select: none;
+}
+.container .header span:first-child{
+    margin-right: 1em;
+}
+.container .header span:last-child{
+    font-weight: 700;
+}
+.container .content {
+    width: 100%;
+    padding: 0 48px 12px 48px;
+}
+.container .content form div > p {
+    color: var(--fontColor);
+    font-size: 20px;
+    margin: 12px 0;
+}
+.container .content .input-container {
+    position: relative;
+    display: flex;
+}
+.container .content input {
+    font-size: 20px;
+    text-transform: none;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 2px solid var(--containerColor);
+}
+.container .content input:focus {
+    outline: none;
+}
+.container .content .input-container .icons {
+    position: absolute;
+    right: 10px;
+    bottom: 6px;
+}
+.container .content .input-container .icons span {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 22px;
+}
+.container .content .input-container .icons .icon1 {
+    border: 2px solid #56ba6f;
+    color: #56ba6f;
+    display: none;
+}
+.container .content .input-container .icons .icon2 {
+    border: 2px solid #be554c;
+    color: #be554c;
+    display: none;
+}
+.container .content form .error-text {
+    margin-top: 5px;
+    width: 100%;
+    background: #be554c;
+    border-radius: 5px;
+    padding: 4px 12px;
+    display: none;
+}
+.container .content form .error-text span {
+    text-transform: none;
+    color: var(--fontColor);
+}
+.container .content button {
+    font-size: 20px;
+    user-select: none;
+    margin: 30px 0 10px 0;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    background: #657b89;
+    border: 5px solid #657b89;
+    border-radius: 5px;
+    color: var(--fontColor);
+    transition: 0.3s;
+}
+.container .content button:hover {
+    background: #4b5c66;
+    border: 5px solid #4b5c66;
+    box-shadow: 0px 0px 10px 0 #4b5c66;
+}
+.result-container {
+    height: 500px;
+    width: 800px;
+    box-shadow: 0 0 60px var(--blurColor);
+    border: 1px solid var(--blurColor);
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.result-container h2,
+.result-container span,
+.result-container a {
+    color: #e1f2f2;
+}
+.result-container .header {
+    min-height: 30%;
+}
+.result-container .content { 
+    min-height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.result-container .header h2 {
+    font-size: 36px;
+    margin: 24px;
+}
+.result-container .content span {
+    font-size: 24px;
+    margin-bottom: 60px;
+    margin-right: 36px;
+}
+.result-container .content .successBtn {
+    border: 3px solid #56ba6f;
+    border-radius: 12px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.result-container .content .successBtn:hover {
+    background: #56ba6f;
+}
+.result-container .content .failedBtn {
+    border: 3px solid #be554c;
+    border-radius: 12px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.result-container .content a:hover {
+    background: #be554c;
+}

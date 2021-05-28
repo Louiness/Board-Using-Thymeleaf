@@ -1,22 +1,15 @@
 package com.kks.example.board.service;
 
 import com.kks.example.board.dto.BoardRequestDTO;
-import com.kks.example.board.dto.BoardResponseDTO;
 import com.kks.example.board.entity.BoardEntity;
 import com.kks.example.board.entity.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-import java.sql.Date;
+import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class BoardServiceImpl implements BoardService{
